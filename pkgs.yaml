@@ -1,0 +1,32 @@
+---
+ - name: Install repo and pkgs on nodes
+   hosts: linux
+   become: true
+   tasks:
+   - name: Installing Installing repo
+     yum:
+       name:
+         - epel-release
+         - nginx
+         - htop
+       state: present
+       service: started
+     when: ansible_facts.os_family == "Redhat"
+     tags:
+       - never
+       - first
+
+   - name: Installing Installing repo
+     dnf:
+       name:
+         - epel-release
+         - nginx
+         - htop
+       state: present
+       service: started
+     when: ansible_facts.os_family == "Redhat"
+     tags:
+       - never
+       - second
+   
+
