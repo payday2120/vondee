@@ -1,0 +1,10 @@
+---
+ - name: Play to install httpd
+   hosts: all
+   gather_fact: true
+   become: true
+   tasks:
+     - name: Installing httpd on RHEL family
+       yum:
+         name: httpd
+         state: present
