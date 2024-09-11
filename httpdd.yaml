@@ -1,0 +1,14 @@
+---
+ - name: Install HTTPD on servers
+   hosts: all
+   become: true
+   tasks:
+     - name: Install HTTPD package
+       yum:
+         name: httpd
+         state: present
+     - name: Start HTTPD service
+       service:
+         name: httpd
+         state: started
+         enabled: yes
