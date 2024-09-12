@@ -12,3 +12,4 @@
          name: httpd
          state: started
          enabled: yes
+         tags: onlyhttpd
