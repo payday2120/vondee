@@ -7,11 +7,11 @@
      yum:
        name:
          - epel-release
-         - nginx
+         - httpd
          - htop
        state: present
        service: started
-     when: ansible_facts.os_family == "Redhat"
+         # when: ansible_facts.os_family == "Redhat"
      tags:
        - never
        - first
