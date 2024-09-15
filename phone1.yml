@@ -1,0 +1,9 @@
+---
+ - name: playboot to install nginx
+   hosts: all
+   become: true
+   tasks:
+     - name: install nginx
+       yum:
+        name: nginx
+        state: latest
