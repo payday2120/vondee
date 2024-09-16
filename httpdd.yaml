@@ -7,10 +7,4 @@
        yum:
          name: httpd
          state: present
-         tags: present
-     - name: Start HTTPD service
-       service:
-         name: httpd
-         state: started
-         enabled: yes
-         tags: enabled
+         
